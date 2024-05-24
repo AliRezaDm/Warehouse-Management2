@@ -19,13 +19,13 @@ class Product(models.Model):
     
     name = models.CharField(max_length=50, verbose_name='نام محصول')
     category = models.ForeignKey(Category, verbose_name='نام ذسته', on_delete=models.CASCADE, related_name='categories')
-    image = models.ImageField(upload_to='media', verbose_name='تصویر محصول')
+    image = models.ImageField(upload_to='media', verbose_name='تصویر محصول', blank=True, null=True)
     count = models.PositiveIntegerField(verbose_name='تعداد ')
     type = models.CharField(max_length=20, verbose_name='نوع')
     size = models.CharField(max_length=20, verbose_name='اندازه')
     price = models.PositiveIntegerField(verbose_name='قیمت خرید')
     sale_price = models.PositiveIntegerField(verbose_name='قیمت فروش')
-    description = models.TextField(verbose_name='توضیحات محصول')
+    description = models.TextField(verbose_name='توضیحات محصول', blank=True, null=True)
 
     class Meta:
 
